@@ -7,6 +7,7 @@ public class PajamuIrasas {
     private String data;
     private boolean pozymisArIBanka;
     private String papildomaInfo;
+    private int id;
 
 
     public int getSuma() {
@@ -49,5 +50,13 @@ public class PajamuIrasas {
         LocalDate t = LocalDate.now();
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.data = t.format(timeFormatter);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

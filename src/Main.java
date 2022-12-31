@@ -7,6 +7,8 @@ public class Main {
         Biudzetas b1 = new Biudzetas();
         Scanner sc = new Scanner(System.in);
         boolean runProgram = true;
+        int pajamosId = 1;
+        int islaidosId = 1;
 
         komandos();
         while(runProgram){
@@ -22,8 +24,10 @@ public class Main {
                     System.out.println("Papildoma informacija:");
                     pi1.setPapildomaInfo(sc.nextLine());
                     pi1.setData();
+                    pi1.setId(pajamosId);
                     b1.pridetiPajamuIrasa(pi1);
                     pi1 = new PajamuIrasas();
+                    pajamosId++;
                 }
                 case "islaidos" -> {
                     System.out.println("Įveskite išlaidų kiekį:");
@@ -35,7 +39,9 @@ public class Main {
                     System.out.println("Papildoma informacija:");
                     ii1.setPapildomaInfo(sc.nextLine());
                     ii1.setDataSuLaiku();
+                    ii1.setId(islaidosId);
                     b1.pridetiIslaiduIrasa(ii1);
+                    islaidosId++;
                     ii1 = new IslaiduIrasas();
                 }
                 case "isvesti pajamas" -> {
