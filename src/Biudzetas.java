@@ -15,7 +15,6 @@ public class Biudzetas {
     }
 
     public void gautiPajamuIrasa(){
-        int count = 1;
         for(PajamuIrasas pajam : pajamos){
             System.out.printf("""
                 Operacijos nr.: %d
@@ -24,14 +23,12 @@ public class Biudzetas {
                 Data: %s
                 Ar i banko saskaita: %b
                 Papildoma informacija: %s
-                """, count, pajam.getSuma(), pajam.getKategorija(), pajam.getData(),
+                """, pajam.getId(), pajam.getSuma(), pajam.getKategorija(), pajam.getData(),
                     pajam.isPozymisArIBanka(), pajam.getPapildomaInfo());
-            count++;
         }
     }
 
     public void gautiIslaiduIsrasa(){
-        int count = 1;
         for(IslaiduIrasas islaid : islaidos){
             System.out.printf("""
                 Operacijos nr.: %d
@@ -40,9 +37,8 @@ public class Biudzetas {
                 Data ir laikas: %s
                 Atsiskaitymo budas: %s
                 Papildoma informacija: %s
-                """, count, islaid.getSuma(), islaid.getKategorija(), islaid.getDataSuLaiku(),
+                """, islaid.getId(), islaid.getSuma(), islaid.getKategorija(), islaid.getDataSuLaiku(),
                     islaid.getAtsiskaitymoBudas(), islaid.getPapildomaInfo());
-            count++;
         }
 
     }

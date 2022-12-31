@@ -7,6 +7,7 @@ public class IslaiduIrasas {
     private String dataSuLaiku;
     private String atsiskaitymoBudas;
     private String papildomaInfo;
+    private int id;
 
 
     public int getSuma() {
@@ -49,5 +50,13 @@ public class IslaiduIrasas {
         LocalDateTime t = LocalDateTime.now();
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.dataSuLaiku = t.format(timeFormatter);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
