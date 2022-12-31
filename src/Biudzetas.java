@@ -8,34 +8,51 @@ public class Biudzetas {
 
     public void pridetiPajamuIrasa(PajamuIrasas pi1){
         pajamos.add(pi1);
-//        pajamosSum += pajamos.get(pajamos.size() - 1).getSuma();
     }
 
     public void pridetiIslaiduIrasa(IslaiduIrasas ii1){
         islaidos.add(ii1);
-//        islaidosSum += islaidos.get(islaidos.size() - 1).getSuma();
     }
 
-    public void gautiPajamuIrasa(int i){
-        System.out.printf("""
+    public void gautiPajamuIrasa(){
+        int count = 1;
+        for(PajamuIrasas pajam : pajamos){
+            System.out.printf("""
+                Operacijos nr.: %d
                 Suma: %d
                 Kategorija: %s
                 Data: %s
                 Ar i banko saskaita: %b
                 Papildoma informacija: %s
-                """, pajamos.get(i).getSuma(), pajamos.get(i).getKategorija(), pajamos.get(i).getData(),
-                pajamos.get(i).isPozymisArIBanka(), pajamos.get(i).getPapildomaInfo());
+                """, count, pajam.getSuma(), pajam.getKategorija(), pajam.getData(),
+                    pajam.isPozymisArIBanka(), pajam.getPapildomaInfo());
+            count++;
+        }
     }
 
-    public void gautiIslaiduIsrasa(int i){
-        System.out.printf("""
+    public void gautiIslaiduIsrasa(){
+        int count = 1;
+        for(IslaiduIrasas islaid : islaidos){
+            System.out.printf("""
+                Operacijos nr.: %d
                 Suma: %d
                 Kategorija: %s
                 Data ir laikas: %s
                 Atsiskaitymo budas: %s
                 Papildoma informacija: %s
-                """, islaidos.get(i).getSuma(), islaidos.get(i).getKategorija(), islaidos.get(i).getDataSuLaiku(),
-                islaidos.get(i).getAtsiskaitymoBudas(), islaidos.get(i).getPapildomaInfo());
+                """, count, islaid.getSuma(), islaid.getKategorija(), islaid.getDataSuLaiku(),
+                    islaid.getAtsiskaitymoBudas(), islaid.getPapildomaInfo());
+            count++;
+        }
+
+    }
+
+    public void removeP(int i){
+        pajamos.remove(i);
+    }
+
+    public void removeI(int i){
+        islaidos.remove(i);
     }
 
     public double balansas(){

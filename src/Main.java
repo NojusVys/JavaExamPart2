@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String [] args){
-//        int pajamosCount = 0;
         PajamuIrasas pi1 = new PajamuIrasas();
         IslaiduIrasas ii1 = new IslaiduIrasas();
         Biudzetas b1 = new Biudzetas();
@@ -40,16 +39,22 @@ public class Main {
                     ii1 = new IslaiduIrasas();
                 }
                 case "isvesti pajamas" -> {
-                    System.out.println("Kurią pajamų operaciją norėtumėte matyti? (1 - 100)");
-                    int w = Integer.parseInt(sc.nextLine());
-                    b1.gautiPajamuIrasa(w - 1);
+                    b1.gautiPajamuIrasa();
                 }
                 case "isvesti islaidas" -> {
-                    System.out.println("Kurią išlaidų operaciją norėtumėte matyti? (1 - 100)");
-                    int q = Integer.parseInt(sc.nextLine());
-                    b1.gautiIslaiduIsrasa(q - 1);
+                    b1.gautiIslaiduIsrasa();
                 }
                 case "balansas" -> System.out.printf("Dabartinis balansas: %.2f EUR\n", b1.balansas());
+                case "remove p" -> {
+                    System.out.println("Kurią operaciją norite pašalinti?");
+                    int i = Integer.parseInt(sc.nextLine());
+                    b1.removeP(i - 1);
+                }
+                case "remove i" -> {
+                    System.out.println("Kurią operaciją norite pašalinti?");
+                    int i = Integer.parseInt(sc.nextLine());
+                    b1.removeI(i - 1);
+                }
                 case "komandos" -> komandos();
                 case "stop" -> {
                     System.out.println("Programa baigiama.");
@@ -68,6 +73,8 @@ public class Main {
                 isvesti pajamas
                 isvesti išlaidas
                 balansas - patikrinti balansą
+                remove p - pašalinti pajamų operaciją iš sąrašo
+                remove i - pašalinti išlaidų operaciją iš sąrašo
                 komandos - komandų sąrašas
                 stop - nutraukia programos veikimą
                 """);

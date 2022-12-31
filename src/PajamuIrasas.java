@@ -50,6 +50,4 @@ public class PajamuIrasas {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.data = t.format(timeFormatter);
     }
-
-
 }
