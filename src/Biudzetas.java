@@ -6,14 +6,14 @@ public class Biudzetas {
     private int pajamosSum = 0;
     private int islaidosSum = 0;
 
-    public void pridetiPajamuIrasa(int i, PajamuIrasas pi1){
-        pajamos.set(i, pi1);
-        pajamosSum += pajamos.get(pajamos.size() - 1).getSuma();
+    public void pridetiPajamuIrasa(PajamuIrasas pi1){
+        pajamos.add(pi1);
+//        pajamosSum += pajamos.get(pajamos.size() - 1).getSuma();
     }
 
     public void pridetiIslaiduIrasa(IslaiduIrasas ii1){
         islaidos.add(ii1);
-        islaidosSum += islaidos.get(islaidos.size() - 1).getSuma();
+//        islaidosSum += islaidos.get(islaidos.size() - 1).getSuma();
     }
 
     public void gautiPajamuIrasa(int i){
@@ -39,6 +39,14 @@ public class Biudzetas {
     }
 
     public double balansas(){
+        for (int i = 0; i < pajamos.size(); i++) {
+            pajamosSum += pajamos.get(i).getSuma();
+        }
+
+        for (int i = 0; i < islaidos.size(); i++) {
+            islaidosSum += islaidos.get(i).getSuma();
+        }
+
         return pajamosSum - islaidosSum;
     }
 }

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String [] args){
-        int pajamosCount = 0;
+//        int pajamosCount = 0;
         PajamuIrasas pi1 = new PajamuIrasas();
         IslaiduIrasas ii1 = new IslaiduIrasas();
         Biudzetas b1 = new Biudzetas();
@@ -23,8 +23,8 @@ public class Main {
                     System.out.println("Papildoma informacija:");
                     pi1.setPapildomaInfo(sc.nextLine());
                     pi1.setData();
-                    b1.pridetiPajamuIrasa(pajamosCount, pi1);
-                    pajamosCount++;
+                    b1.pridetiPajamuIrasa(pi1);
+                    pi1 = new PajamuIrasas();
                 }
                 case "islaidos" -> {
                     System.out.println("Įveskite išlaidų kiekį:");
@@ -37,6 +37,7 @@ public class Main {
                     ii1.setPapildomaInfo(sc.nextLine());
                     ii1.setDataSuLaiku();
                     b1.pridetiIslaiduIrasa(ii1);
+                    ii1 = new IslaiduIrasas();
                 }
                 case "isvesti pajamas" -> {
                     System.out.println("Kurią pajamų operaciją norėtumėte matyti? (1 - 100)");
